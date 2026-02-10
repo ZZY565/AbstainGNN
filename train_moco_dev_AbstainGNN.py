@@ -622,7 +622,7 @@ def test(devloader, testloader, model, criterion, epoch, use_cuda, evaluation = 
                 abstention_results.extend(zip(list( reservation.numpy() ),list( predictions.eq(targets.to(predictions.device)).numpy() )))
                 if args.loss == 'log_ml':
                     abstention_results_nosoftmax.extend(zip(list( reservation_nosoftmax.numpy() ),list( predictions.eq(targets.to(predictions.device)).numpy() )))
-                if args.loss == 'ce' or args.loss == 'log_ml' or args.loss == 'csc' or args.loss == 'ours': #修改loss abstention
+                if args.loss == 'ce' or args.loss == 'log_ml' or args.loss == 'csc' or args.loss == 'ours': 
                     pred_logits = nn.functional.softmax(output_logits, -1)
                 else:
                     pred_logits = nn.functional.softmax(output_logits[:,:-1], -1)
