@@ -1068,7 +1068,7 @@ def bisection_method(score, correct, results):
         nData = len(correct)
         nSelected = mask.long().sum().item()
         if nSelected == 0:
-            continue  # ⚠️ 防止除零
+            continue  
         isCorrect = correct[mask]
         nCorrectSelected = isCorrect.long().sum().item()
         passed_acc = nCorrectSelected / nSelected
