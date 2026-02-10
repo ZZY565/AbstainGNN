@@ -1302,7 +1302,7 @@ def train(trainloader, archive, model, model_k, criterion, criterion2, optimizer
                         if args.prototypes_u.device != feats.device:
                             args.prototypes_u = args.prototypes_u.to(feats.device)
 
-                        batch_centers_u = torch.zeros(args.num_classes, u.size(1), device=u.device, dtype=u.dtype)#加入消融EMA
+                        batch_centers_u = torch.zeros(args.num_classes, u.size(1), device=u.device, dtype=u.dtype)
 
                         for c in range(args.num_classes):
                             mask = (targets == c)
@@ -1780,7 +1780,7 @@ def test(trainloader, testloader, model, criterion, epoch, use_cuda, evaluation 
 
 
         if args.loss == "ours_proto" and confidence_head is not None and len(confhead_results) > 0:
-            confhead_results.sort(key=lambda x: -x[0])  # 对应方案A
+            confhead_results.sort(key=lambda x: -x[0])  
             sorted_correct = [int(c) for _, c in confhead_results]
             size = len(sorted_correct)
             print('ConfidenceHead giGT: accuracy of coverage ', end='')
