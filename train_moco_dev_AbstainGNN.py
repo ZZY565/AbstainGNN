@@ -417,8 +417,8 @@ def main():
                 confidence_head = GCNConfidenceHead(
                     input_dim=input_dim,
                     hidden_dim=hidden_dim,
-                    num_layers=1,      # 你想和 backbone 一模一样就设 3
-                    dropout=0.0,       # 也可单独设小点，比如 0.0
+                    num_layers=1,     
+                    dropout=0.0,   
                     mlp_hidden=hidden_dim,
                     mlp_layers=2,
                     device="cuda",
