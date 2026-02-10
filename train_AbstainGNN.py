@@ -985,7 +985,7 @@ def train(trainloader, archive, model, model_k, criterion, criterion2, optimizer
         for param_q, param_k in zip(
                 model.parameters(), model_k.parameters()
             ):
-                param_k.data = param_k.data * args.moco_m + param_q.data * (1.0 - args.moco_m) #更新model_k
+                param_k.data = param_k.data * args.moco_m + param_q.data * (1.0 - args.moco_m)
     
     batch_time = AverageMeter()
     data_time = AverageMeter()
